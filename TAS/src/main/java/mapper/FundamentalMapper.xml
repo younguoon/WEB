@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="stock.fundamental">
+<!-- 종목코드 리스트 -->
+	<select id="codeList" resultType="EnterpriseTotalDTO">
+		select DISTINCT t.* from ENTERPRISE_TOTAL t, ENTERPRISE_FINANCE f where t.code=f.code order by t.name asc
+	</select>
+	 
+<!-- 종목코드, 종가, 날짜(주단위) 리스트 -->
+	<select id="stockCloseList" resultType="StockCloseWDTO" parameterType="String">
+		select * from StockClose_W where code=#{code} order by code, week asc
+	</select> 
+	
+<!-- 종가 리스트 -->
+	<select id="closeList" resultType="StockCloseWDTO" parameterType="String">
+		select price from StockClose_W where code=#{code} order by code, week asc
+	</select>
+	
+<!-- 종목코드, 종목명, 주식총수 리스트 -->
+	<select id="totalList" resultType="EnterpriseTotalDTO" parameterType="String">
+		select * from enterprise_total where code =#{code} order by code asc
+	</select>
+		
+<!-- 기업 재무정보 리스트-->
+	<select id="enterpriseFinance" resultType="EnterpriseFinanceDTO" parameterType="String">
+		select DISTINCT t.name, f.* from ENTERPRISE_TOTAL t, ENTERPRISE_FINANCE f where t.code=f.code and f.code=#{f.code}
+	</select>
+
+<!-- 종가 리스트(최근날짜)-->
+	<select id="stockCloseCheck" resultType="StockCloseWDTO">
+		<![CDATA[select * from (select *from STOCKCLOSE_W order by week desc ) where rownum <=488]]>
+	</select>
+	
+<!-- 종목코드 리스트(최근날짜) check 페이지(코드, 이름, 종가, 주) - code(total), name(total), price(w), week(w) order by desc-->
+<!-- 코드 오름차순, 가장최근 week -->
+	<select id="closeCheck" resultType="CheckDTO">
+		<![CDATA[select *from (select * from (select t.code, t.name, w.price, w.week from ENTERPRISE_TOTAL t, STOCKCLOSE_W w where t.code=w.code order by w.week desc) where rownum<=443) order by code]]>                                    
+	</select>
+	
+<!-- 코드 오름차순, 가장최근 week -->
+	<select id="nameCheck" resultType="CheckDTO">
+		<![CDATA[select *from (select * from (select t.code, t.name, w.price, w.week from ENTERPRISE_TOTAL t, STOCKCLOSE_W w where t.code=w.code order by w.week desc) where rownum<=443) order by code]]>                                    
+	</select>
+
+
+	
+</mapper>
+
+
+
+
+
+
+	

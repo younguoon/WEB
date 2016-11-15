@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="indexTemplate" template="/WEB-INF/layout/indexLayout.jsp">
+		<put-attribute name="top" value="/WEB-INF/layout/top.jsp" />
+		<put-attribute name="content" value="/WEB-INF/layout/content.jsp" />
+	</definition>
+	
+	<definition name="index" extends="indexTemplate">
+	</definition>
+	
+
+<!-- fundamental start -->
+	<definition name="chart_per" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_per.jsp"/>
+	</definition>
+	<definition name="chart_pbr" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_pbr.jsp"/>
+	</definition>
+	<definition name="chart_pbr_layout" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_pbr_layout.jsp"/>
+	</definition>
+	<definition name="chart_per_layout" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_per_layout.jsp"/>
+	</definition>
+	<!-- pbr -->
+	<definition name="check_pbrper_pbr" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbr.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr1" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr1.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr2" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr2.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr3" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr3.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr4" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr4.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr5" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr5.jsp"/>
+	</definition>
+	<!-- per -->
+	<definition name="check_pbrper_per" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_per.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per1" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per1.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per2" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per2.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per3" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per3.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per4" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per4.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per5" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per5.jsp"/>
+	</definition>
+
+<!-- board -->
+
+
+
+<!-- member -->
+	<definition name="input/form" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/memberInput.jsp"/>
+	</definition>
+	<definition name="search" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/search.jsp"/>
+	</definition>
+	<definition name="searchlist" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/searchlist_jstl.jsp"/>
+	</definition>
+	<definition name="list" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/list.jsp"/>
+	</definition>
+	<definition name="detail" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/detail.jsp"/>
+	</definition>
+	<definition name="update" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/update.jsp"/>
+	</definition>
+	<definition name="tx/input" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/txmemberInput.jsp"/>
+	</definition>
+	<definition name="login/form" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/login.jsp"/>
+	</definition>
+	<definition name="i18ntest" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/views/message.jsp"/>
+	</definition>
+	<definition name="upload/form" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/member/upload.jsp"/>
+	</definition>
+	
+	
+	
+	
+	
+	
+<!-- technical start -->	
+	<definition name="goldencross" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/goldencross.jsp"/>
+	</definition>
+	<definition name="rsi" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/rsi.jsp"/>
+	</definition>
+	<definition name="stockChart" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/stockChart.jsp"/>
+	</definition>
+	<definition name="stockMultipleChart" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/stockMultipleChart.jsp"/>
+	</definition>
+	
+<!-- bigdata start -->
+	<definition name="bigdata" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/bigdata/bigdata.jsp"/>
+	</definition>
+	<definition name="industry" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/bigdata/industry.jsp"/>
+	</definition>
+
+</tiles-definitions>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  
+ <mapper namespace="finalpro.technical" >
+ 	<select id="codelist"  resultType="String">
+ 		select code from enterprise_total order by code asc
+ 	</select>
+ 	
+ 	<select id="infolist"  parameterType="String" resultType="stockdinfo">
+ 		<![CDATA[  select c.name, i.* , c.totalstock 
+ 						from enterprise_total c, stockdinfo i 
+ 							where c.code = i.code and i.code=#{code}
+ 								order by i.day asc]]> 
+ 	</select>
+ 	<select id="whole_infolist" parameterType="String" resultType="stockdinfo">
+ 		<![CDATA[  select c.name, i.* , c.totalstock 
+ 						from enterprise_total c, stockdinfo i 
+ 							where c.code = i.code and day>=#{day} 
+ 								order by c.code asc, i.day desc]]>
+ 	</select>
+ </mapper>  

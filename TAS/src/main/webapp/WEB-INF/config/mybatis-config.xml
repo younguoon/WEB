@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+	<!-- fundamental -->
+		<typeAlias type="fundamental.dto.BpsDTO" alias="BpsDTO"/>
+		<typeAlias type="fundamental.dto.EpsDTO" alias="EpsDTO"/>
+		<typeAlias type="fundamental.dto.EnterpriseFinanceDTO" alias="EnterpriseFinanceDTO"/>
+		<typeAlias type="fundamental.dto.EnterpriseTotalDTO" alias="EnterpriseTotalDTO"/>
+		<typeAlias type="fundamental.dto.StockCloseWDTO" alias="StockCloseWDTO"/>
+		<typeAlias type="fundamental.dto.CheckDTO" alias="CheckDTO"/>
+	<!-- board -->	
+		<typeAlias type="board.dto.BoardDTO" alias="brd"/>
+	<!-- member -->
+		<typeAlias type="member.dto.MemberDTO" alias="member"/>
+	<!-- technical -->
+		<typeAlias type="technical.dto.StockDInfoDTO" alias="stockdinfo"/>
+	<!-- bigdata -->
+		<typeAlias type="bigdata.dto.BigdataDTO" alias="bigdata"/>
+	
+	</typeAliases>
+	<mappers>
+	<!-- fundamental -->
+		<mapper resource="mapper/FundamentalMapper.xml"/>
+	<!-- board -->
+		<mapper resource="mapper/BoardMapper.xml"/>
+	<!-- board2 -->
+		<mapper resource="mapper/Board2Mapper.xml"/>
+	<!-- member -->	
+		<mapper resource="mapper/MemberMapper.xml"/>
+	<!-- technical -->
+		<mapper resource="mapper/StockDMapper.xml"/>
+	<!-- bigdata -->
+		<mapper resource="mapper/stockMapper.xml"/>
+	</mappers>
+	
+	
+</configuration>
