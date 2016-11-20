@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>GoldenCross</title>
-
+ 
 </head>
 <body>
 	<div id="container" class="container">

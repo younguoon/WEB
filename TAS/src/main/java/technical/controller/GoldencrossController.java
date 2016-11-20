@@ -25,7 +25,7 @@ public class GoldencrossController {
 	
 	@RequestMapping(value="/goldencross.do", method=RequestMethod.GET)
 	public ModelAndView run(HttpServletRequest req, String mode) throws ParseException{
-		long start = System.currentTimeMillis(); //실행시간측정을 위한 변수
+//		long start = System.currentTimeMillis(); //실행시간측정을 위한 변수
 		
 		//검색 시작할 날짜 가져오기
 		String day= service.getSearchStartDay(mode);
@@ -35,7 +35,7 @@ public class GoldencrossController {
 		
 
 		//DB 로딩 시간측정
-		long dbEnd = System.currentTimeMillis();
+//		long dbEnd = System.currentTimeMillis();
 		//System.out.println( "DB불러오기 실행 시간 : " + ( dbEnd - start )/1000.0 );
 		
 		//종목 코드 리스트 저장
@@ -45,7 +45,7 @@ public class GoldencrossController {
 		
 		
 		//골든 크로스 체크 시작 시간
-		long isGoldencrossstart = System.currentTimeMillis();
+//		long isGoldencrossstart = System.currentTimeMillis();
 		
 		int stockInfoIndex =0;
 		for(int i=0; i<codeList.size();i++){
@@ -78,11 +78,11 @@ public class GoldencrossController {
 			
 		}
 		
-		long isGoldencrossEnd = System.currentTimeMillis();
+//		long isGoldencrossEnd = System.currentTimeMillis();
 		//System.out.println("골든크로스 체크 실행 시간 : " + ( isGoldencrossEnd - isGoldencrossstart )/1000.0 );
 		
 		//실행시간측정
-		long logicEnd = System.currentTimeMillis();
+//		long logicEnd = System.currentTimeMillis();
 		//System.out.println( "총 실행 시간 : " + ( logicEnd - start )/1000.0 );
 		
 		
